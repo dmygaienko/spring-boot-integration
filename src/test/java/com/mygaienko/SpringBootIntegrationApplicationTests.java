@@ -1,6 +1,6 @@
 package com.mygaienko;
 
-import com.mygaienko.config.ActiveMQConfig;
+import com.mygaienko.config.HelloActiveMQConfig;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -30,7 +30,7 @@ public class SpringBootIntegrationApplicationTests {
 		conn.start();
 
 		session = conn.createSession(false, Session.AUTO_ACKNOWLEDGE);
-		destination = session.createQueue(ActiveMQConfig.HELLO_QUEUE);
+		destination = session.createQueue(HelloActiveMQConfig.HELLO_QUEUE);
 		producer = session.createProducer(destination);
 		producer.setDeliveryMode(DeliveryMode.NON_PERSISTENT);
 	}

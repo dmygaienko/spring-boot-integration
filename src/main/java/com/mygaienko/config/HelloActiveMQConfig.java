@@ -11,8 +11,8 @@ import javax.jms.Queue;
  * Created by enda1n on 27.09.2016.
  */
 @Configuration
-@ImportResource("classpath*:si-config.xml")
-public class ActiveMQConfig {
+@ImportResource("classpath*:si-config/hello-si-config.xml")
+public class HelloActiveMQConfig {
 
     public static final String HELLO_QUEUE = "hello.queue";
 
