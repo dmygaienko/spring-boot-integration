@@ -5,12 +5,15 @@
        xmlns:integration="http://www.springframework.org/schema/integration"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/integration/jms http://www.springframework.org/schema/integration/jms/spring-integration-jms.xsd">
 
-    <jms:message-driven-channel-adapter id="helloJMSAdapater" destination="helloJMSQueue"
-                                        connection-factory="jmsConnectionFactory" channel="helloChannel"/>
+    <jms:message-driven-channel-adapter id="helloJMSAdapter"
+                                        destination="helloJMSQueue"
+                                        connection-factory="jmsConnectionFactory"
+                                        channel="helloChannel" />
 
     <integration:channel id="helloChannel"/>
 
-    <integration:service-activator id="sayHelloServiceActivator" input-channel="helloChannel"
+    <integration:service-activator id="sayHelloServiceActivator"
+                                   input-channel="helloChannel"
                                    ref="sayHelloService" method="sayHello"/>
 
 </beans>
