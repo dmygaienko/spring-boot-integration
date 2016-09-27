@@ -10,8 +10,6 @@
 
     <beans:import resource="classpath*:si-config/product-si-config.xml"/>
 
-    <service-activator ref="productService" method="getProduct" input-channel="getProductChannel"/>
-
     <gateway service-interface="com.mygaienko.gateway.AddressGateway"/>
     <gateway service-interface="com.mygaienko.gateway.InventoryGateway"/>
     <gateway service-interface="com.mygaienko.gateway.OrderGateway"/>

@@ -9,6 +9,7 @@
 
     <gateway service-interface="com.mygaienko.gateway.ProductGateway"/>
 
-    <channel id="getProductChannel"/>
+    <channel id="productChannel"/>
+    <service-activator input-channel="productChannel" ref="productService" method="getProduct" />
 
 </beans:beans>
